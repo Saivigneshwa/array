@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main() {
+    int a[10], n, i, key, temp;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    /* Traversing */
+    printf("\nArray elements are:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+
+    /* Searching */
+    printf("\n\nEnter element to search: ");
+    scanf("%d", &key);
+
+    for(i = 0; i < n; i++) {
+        if(a[i] == key) {
+            printf("Element found at position %d\n", i + 1);
+            break;
+        }
+    }
+    if(i == n) {
+        printf("Element not found\n");
+    }
+
+    /* Sorting (Bubble Sort) */
+    for(i = 0; i < n - 1; i++) {
+        for(int j = 0; j < n - i - 1; j++) {
+            if(a[j] > a[j + 1]) {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("\nSorted Array:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
